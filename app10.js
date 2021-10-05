@@ -103,6 +103,8 @@ app.get("/call-student2", (req,res) => {
     });
 });
 
+
+
 app.get("/call-covid2", (req,res) => {
     let sql2 = "CALL CovidNew()";
     con.query(sql2, (err, result) => {
