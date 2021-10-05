@@ -3,7 +3,7 @@ fs.mkdir("./data", function (err){
     if(err){
         console.log ("test directory created");
     } else {
-        console.log ("failed to create test directory");
+        console.log ("failed to create test directory...");
     }
 });
 
@@ -16,6 +16,5 @@ fs.readFile("./data/info2.txt", "utf-8", (err, data)=> {
         console.log(data);
     }else{
         throw err;
-        console("file not found")
     }
 });
