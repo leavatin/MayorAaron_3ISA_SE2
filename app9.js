@@ -31,7 +31,7 @@ app.get("/create-covid", (req,res) => {
 });
 
 app.get("/create-covid-table", (req,res) => {
-    let sql2 = "CREATE TABLE stat(locationid int AUTO_INCREMENT, location string, cases int, death int,PRIMARY KEY(locationid))";
+    let sql2 = "CREATE TABLE stat(locationid int AUTO_INCREMENT, location string,  cases int, death int,PRIMARY KEY(locationid))";
     con.query(sql2, (err, result) => {
         if(!err){
             res.send(result);
@@ -66,3 +66,28 @@ app.get("/read-covid", (req,res) => {
         }
     });
 });
+
+app.get("/update-covid", (req,res) => {
+    let sql2 = "UPDATE CovidDb SET cases=5000, location='Metro Manila', deaths=6000 WHERE id=1";
+    con.query(sql2, (err, result) => {
+        if(!err){
+            res.send(result);
+        }else{
+            throw err
+            res.send("failed to update student table");
+        }
+    });
+});
+
+app.get("/delete-covid", (req,res) => {
+    let sql2 = "DELETE FROM CovidDb WHERE id=1";
+    con.query(sql2, (err, result) => {
+        if(!err){
+            res.send(result);
+        }else{
+            throw err
+            res.send("failed to update student table");
+        }
+    });
+});
+

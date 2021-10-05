@@ -31,7 +31,7 @@ app.get("/create-covid", (req,res) => {
 });
 
 app.get("/create-covid-table", (req,res) => {
-    let sql2 = "CREATE TABLE stat(locationid int AUTO_INCREMENT,  cases int, death int,PRIMARY KEY(locationid))";
+    let sql2 = "CREATE TABLE stat(locationid int AUTO_INCREMENT, location string, cases int, death int,PRIMARY KEY(locationid))";
     con.query(sql2, (err, result) => {
         if(!err){
             res.send(result);
